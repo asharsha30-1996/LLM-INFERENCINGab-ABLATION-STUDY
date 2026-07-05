@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520">
+<rect width="1120" height="520" fill="#ffffff"/>
+<style>
+.title { font: 700 22px Segoe UI, Arial, sans-serif; fill: #1f2933; }
+.subtitle { font: 13px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.label { font: 12px Segoe UI, Arial, sans-serif; fill: #243b53; }
+.small { font: 10px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.axis { stroke: #9fb3c8; stroke-width: 1; }
+.grid { stroke: #e4ebf2; stroke-width: 1; }
+.box { fill: #f8fafc; stroke: #b8c7d6; stroke-width: 1.5; rx: 8; }
+.box2 { fill: #edf7f6; stroke: #4f9d96; stroke-width: 1.5; rx: 8; }
+.box3 { fill: #fff7ed; stroke: #d97706; stroke-width: 1.5; rx: 8; }
+.arrow { stroke: #52616f; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+</style>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#52616f"/>
+</marker>
+</defs>
+<text x="36.0" y="38.0" class="title" text-anchor="start">Final Monolithic Serving Architecture</text>
+<text x="36.0" y="62.0" class="subtitle" text-anchor="start">Four Modal replicas each run one vLLM server that performs prefill and decode in the same scheduler.</text>
+<rect x="62" y="118" width="190" height="96" class="box"/>
+<text x="157.0" y="154.0" class="label" text-anchor="middle">Load Tester</text>
+<text x="157.0" y="178.0" class="small" text-anchor="middle">mixed prompts</text>
+<path d="M252 166 C320 166, 340 166, 400 166" class="arrow"/>
+<rect x="400" y="96" width="660" height="292" class="box"/>
+<text x="730.0" y="126.0" class="label" text-anchor="middle">Modal App: 4 H100 Replicas</text>
+<rect x="440" y="160" width="130" height="150" class="box2"/>
+<text x="505.0" y="190.0" class="label" text-anchor="middle">Replica 1</text>
+<text x="505.0" y="218.0" class="small" text-anchor="middle">vLLM server</text>
+<text x="505.0" y="244.0" class="small" text-anchor="middle">prefill + decode</text>
+<text x="505.0" y="270.0" class="small" text-anchor="middle">b2048 / seq32</text>
+<rect x="590" y="160" width="130" height="150" class="box2"/>
+<text x="655.0" y="190.0" class="label" text-anchor="middle">Replica 2</text>
+<text x="655.0" y="218.0" class="small" text-anchor="middle">vLLM server</text>
+<text x="655.0" y="244.0" class="small" text-anchor="middle">prefill + decode</text>
+<text x="655.0" y="270.0" class="small" text-anchor="middle">b2048 / seq32</text>
+<rect x="740" y="160" width="130" height="150" class="box2"/>
+<text x="805.0" y="190.0" class="label" text-anchor="middle">Replica 3</text>
+<text x="805.0" y="218.0" class="small" text-anchor="middle">vLLM server</text>
+<text x="805.0" y="244.0" class="small" text-anchor="middle">prefill + decode</text>
+<text x="805.0" y="270.0" class="small" text-anchor="middle">b2048 / seq32</text>
+<rect x="890" y="160" width="130" height="150" class="box2"/>
+<text x="955.0" y="190.0" class="label" text-anchor="middle">Replica 4</text>
+<text x="955.0" y="218.0" class="small" text-anchor="middle">vLLM server</text>
+<text x="955.0" y="244.0" class="small" text-anchor="middle">prefill + decode</text>
+<text x="955.0" y="270.0" class="small" text-anchor="middle">b2048 / seq32</text>
+<path d="M730 388 C730 424, 730 424, 730 454" class="arrow"/>
+<rect x="574" y="454" width="312" height="44" class="box3"/>
+<text x="730.0" y="482.0" class="label" text-anchor="middle">Best score: 7.08M, 0.0% errors</text>
+</svg>

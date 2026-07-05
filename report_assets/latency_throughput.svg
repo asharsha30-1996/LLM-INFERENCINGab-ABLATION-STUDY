@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640">
+<rect width="1120" height="640" fill="#ffffff"/>
+<style>
+.title { font: 700 22px Segoe UI, Arial, sans-serif; fill: #1f2933; }
+.subtitle { font: 13px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.label { font: 12px Segoe UI, Arial, sans-serif; fill: #243b53; }
+.small { font: 10px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.axis { stroke: #9fb3c8; stroke-width: 1; }
+.grid { stroke: #e4ebf2; stroke-width: 1; }
+.box { fill: #f8fafc; stroke: #b8c7d6; stroke-width: 1.5; rx: 8; }
+.box2 { fill: #edf7f6; stroke: #4f9d96; stroke-width: 1.5; rx: 8; }
+.box3 { fill: #fff7ed; stroke: #d97706; stroke-width: 1.5; rx: 8; }
+.arrow { stroke: #52616f; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+</style>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#52616f"/>
+</marker>
+</defs>
+<text x="36.0" y="38.0" class="title" text-anchor="start">Latency/Throughput Tradeoff</text>
+<text x="36.0" y="62.0" class="subtitle" text-anchor="start">The best run sits in the low-TTFT, high-throughput corner. Saturated runs drift right and down.</text>
+<line x1="92.0" y1="90.0" x2="92.0" y2="535.0" class="grid"/>
+<line x1="92.0" y1="90.0" x2="1032.0" y2="90.0" class="grid"/>
+<text x="92.0" y="559.0" class="small" text-anchor="middle">0.0s</text>
+<text x="82.0" y="94.0" class="small" text-anchor="end">3500</text>
+<line x1="280.0" y1="90.0" x2="280.0" y2="535.0" class="grid"/>
+<line x1="92.0" y1="179.0" x2="1032.0" y2="179.0" class="grid"/>
+<text x="280.0" y="559.0" class="small" text-anchor="middle">1.9s</text>
+<text x="82.0" y="183.0" class="small" text-anchor="end">2800</text>
+<line x1="468.0" y1="90.0" x2="468.0" y2="535.0" class="grid"/>
+<line x1="92.0" y1="268.0" x2="1032.0" y2="268.0" class="grid"/>
+<text x="468.0" y="559.0" class="small" text-anchor="middle">3.8s</text>
+<text x="82.0" y="272.0" class="small" text-anchor="end">2100</text>
+<line x1="656.0" y1="90.0" x2="656.0" y2="535.0" class="grid"/>
+<line x1="92.0" y1="357.0" x2="1032.0" y2="357.0" class="grid"/>
+<text x="656.0" y="559.0" class="small" text-anchor="middle">5.7s</text>
+<text x="82.0" y="361.0" class="small" text-anchor="end">1400</text>
+<line x1="844.0" y1="90.0" x2="844.0" y2="535.0" class="grid"/>
+<line x1="92.0" y1="446.0" x2="1032.0" y2="446.0" class="grid"/>
+<text x="844.0" y="559.0" class="small" text-anchor="middle">7.6s</text>
+<text x="82.0" y="450.0" class="small" text-anchor="end">700</text>
+<line x1="1032.0" y1="90.0" x2="1032.0" y2="535.0" class="grid"/>
+<line x1="92.0" y1="535.0" x2="1032.0" y2="535.0" class="grid"/>
+<text x="1032.0" y="559.0" class="small" text-anchor="middle">9.5s</text>
+<text x="82.0" y="539.0" class="small" text-anchor="end">0</text>
+<line x1="92.0" y1="535.0" x2="1032.0" y2="535.0" class="axis"/>
+<line x1="92.0" y1="90.0" x2="92.0" y2="535.0" class="axis"/>
+<text x="562.0" y="587.0" class="label" text-anchor="middle">TTFT p95</text>
+<text x="22.0" y="312.5" class="label" text-anchor="middle">Throughput</text>
+<circle cx="242.6" cy="277.9" r="15.4" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="254.6" y="269.9" class="small" text-anchor="start">baseline</text>
+<circle cx="155.1" cy="124.1" r="20.0" fill="#16a34a" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="167.1" y="116.1" class="small" text-anchor="start">best</text>
+<circle cx="601.2" cy="369.9" r="10.4" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="613.2" y="361.9" class="small" text-anchor="start">b4096</text>
+<circle cx="333.6" cy="266.7" r="12.2" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="345.6" y="258.7" class="small" text-anchor="start">b1024</text>
+<circle cx="312.7" cy="313.7" r="11.9" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="324.7" y="305.7" class="small" text-anchor="start">no-prefix</text>
+<circle cx="378.4" cy="303.6" r="10.7" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="390.4" y="295.6" class="small" text-anchor="start">no-chunk</text>
+<circle cx="598.9" cy="301.1" r="10.9" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="610.9" y="293.1" class="small" text-anchor="start">seq16</text>
+<circle cx="660.9" cy="427.9" r="9.3" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="672.9" y="419.9" class="small" text-anchor="start">seq48</text>
+<circle cx="448.0" cy="351.4" r="10.3" fill="#f97316" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="460.0" y="343.4" class="small" text-anchor="start">u130</text>
+<circle cx="974.2" cy="406.2" r="9.3" fill="#f97316" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="986.2" y="398.2" class="small" text-anchor="start">u140</text>
+<circle cx="465.8" cy="278.2" r="11.6" fill="#64748b" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="477.8" y="270.2" class="small" text-anchor="start">routed 1+3</text>
+<circle cx="248.4" cy="274.7" r="17.1" fill="#2563eb" fill-opacity="0.78" stroke="#1f2933" stroke-width="1"/>
+<text x="260.4" y="266.7" class="small" text-anchor="start">compiled</text>
+</svg>

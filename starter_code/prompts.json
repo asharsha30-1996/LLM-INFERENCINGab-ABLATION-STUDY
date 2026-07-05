@@ -1,0 +1,26 @@
+{
+  "system_prompt": "You are InferTutor, a precise AI tutor for an inference engineering workshop. Answer with concrete systems reasoning. Keep answers compact, technical, and useful for a student optimizing vLLM serving.",
+  "text": [
+    "A student sees TTFT p95 jump from 700 ms to 4 s when traffic rises from 50 to 200 users. Diagnose likely causes and the first two experiments.",
+    "Explain why decode is often memory-bandwidth bound while prefill is more compute-bound. Mention KV cache behavior.",
+    "Given a 4 GPU budget for a 4B tutor model, when would replicas beat tensor parallelism?",
+    "What should a team tune first: max_num_seqs, max_num_batched_tokens, or max_model_len? Give a practical order.",
+    "Explain prefix caching using a course tutor with a long shared system prompt.",
+    "A team increases max_num_batched_tokens from 4096 to 16384. Throughput rises slightly but ITL p95 doubles. Explain the tradeoff.",
+    "Why can an 8 GPU run have more errors than a 4 GPU run even if aggregate GPU compute is higher?",
+    "Explain how chunked prefill protects decode latency in a mixed workload.",
+    "A vLLM server has low GPU utilization and low requests per second. What should the inference engineer inspect?",
+    "Compare tensor parallelism and replication for serving a Qwen 4B tutor model."
+  ],
+  "long": [
+    "Course context: KV cache, GQA, MQA, MLA, FlashAttention, PagedAttention, chunked prefill, continuous batching, quantization, speculative decoding, tensor parallelism, replicas, GPU memory bandwidth. Course context repeated for a long prompt. Course context: KV cache, GQA, MQA, MLA, FlashAttention, PagedAttention, chunked prefill, continuous batching, quantization, speculative decoding, tensor parallelism, replicas, GPU memory bandwidth. Now design a debugging playbook for a team whose p95 ITL degraded after they increased max_num_batched_tokens.",
+    "You are reviewing an inference launch plan. The team wants to serve a multimodal tutor with shared system prompts, short questions, occasional long debugging traces, and small uploaded diagrams. Explain how you would choose max_model_len, max_num_seqs, max_num_batched_tokens, prefix caching, chunked prefill, and replicas. Give the answer as a prioritized checklist."
+  ],
+  "image": [
+    "Look at this simplified serving diagram. What bottleneck would you investigate first for high TTFT?",
+    "This image is a toy workload diagram. Explain whether this looks prefill-heavy or decode-heavy and why.",
+    "A student uploaded this dashboard sketch during a load test. Suggest two vLLM knobs to try next.",
+    "Inspect this simple architecture sketch and explain whether replicas or tensor parallelism would be the first scaling move."
+  ]
+}
+

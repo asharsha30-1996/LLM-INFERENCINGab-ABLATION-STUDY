@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560">
+<rect width="1120" height="560" fill="#ffffff"/>
+<style>
+.title { font: 700 22px Segoe UI, Arial, sans-serif; fill: #1f2933; }
+.subtitle { font: 13px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.label { font: 12px Segoe UI, Arial, sans-serif; fill: #243b53; }
+.small { font: 10px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.axis { stroke: #9fb3c8; stroke-width: 1; }
+.grid { stroke: #e4ebf2; stroke-width: 1; }
+.box { fill: #f8fafc; stroke: #b8c7d6; stroke-width: 1.5; rx: 8; }
+.box2 { fill: #edf7f6; stroke: #4f9d96; stroke-width: 1.5; rx: 8; }
+.box3 { fill: #fff7ed; stroke: #d97706; stroke-width: 1.5; rx: 8; }
+.arrow { stroke: #52616f; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+</style>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#52616f"/>
+</marker>
+</defs>
+<text x="36.0" y="38.0" class="title" text-anchor="start">Attempted Disaggregated Prefill/Decode Architecture</text>
+<text x="36.0" y="62.0" class="subtitle" text-anchor="start">A prefiller/decoder pair was attempted with LMCache KV transfer, but engine initialization failed.</text>
+<rect x="52" y="120" width="165" height="86" class="box"/>
+<text x="134.0" y="154.0" class="label" text-anchor="middle">Load Tester</text>
+<text x="134.0" y="178.0" class="small" text-anchor="middle">OpenAI API</text>
+<path d="M217 164 C270 164, 288 164, 330 164" class="arrow"/>
+<rect x="330" y="112" width="170" height="104" class="box"/>
+<text x="415.0" y="150.0" class="label" text-anchor="middle">FastAPI Proxy</text>
+<text x="415.0" y="176.0" class="small" text-anchor="middle">prefill then stream</text>
+<path d="M500 146 C560 116, 594 110, 650 110" class="arrow"/>
+<path d="M500 182 C560 214, 594 226, 650 226" class="arrow"/>
+<rect x="650" y="72" width="220" height="112" class="box2"/>
+<text x="760.0" y="112.0" class="label" text-anchor="middle">Prefiller vLLM</text>
+<text x="760.0" y="138.0" class="small" text-anchor="middle">GPU 0</text>
+<text x="760.0" y="160.0" class="small" text-anchor="middle">KV producer</text>
+<rect x="650" y="204" width="220" height="112" class="box2"/>
+<text x="760.0" y="244.0" class="label" text-anchor="middle">Decoder vLLM</text>
+<text x="760.0" y="270.0" class="small" text-anchor="middle">GPU 1</text>
+<text x="760.0" y="292.0" class="small" text-anchor="middle">KV consumer</text>
+<path d="M760 184 C760 194, 760 194, 760 204" class="arrow"/>
+<rect x="916" y="128" width="158" height="132" class="box3"/>
+<text x="995.0" y="168.0" class="label" text-anchor="middle">LMCache</text>
+<text x="995.0" y="194.0" class="small" text-anchor="middle">NIXL KV</text>
+<text x="995.0" y="216.0" class="small" text-anchor="middle">transfer</text>
+<path d="M870 128 C900 128, 900 172, 916 172" class="arrow"/>
+<path d="M916 218 C900 218, 900 260, 870 260" class="arrow"/>
+<rect x="222" y="384" width="696" height="90" fill="#fef2f2" stroke="#dc2626" rx="8"/>
+<text x="570.0" y="420.0" class="label" text-anchor="middle">Observed blocker</text>
+<text x="570.0" y="448.0" class="small" text-anchor="middle">LMCache imports cdiv from vLLM utils, but vLLM 0.21.0 no longer exposes it.</text>
+</svg>

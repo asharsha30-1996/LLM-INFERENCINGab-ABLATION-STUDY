@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="600" viewBox="0 0 1120 600">
+<rect width="1120" height="600" fill="#ffffff"/>
+<style>
+.title { font: 700 22px Segoe UI, Arial, sans-serif; fill: #1f2933; }
+.subtitle { font: 13px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.label { font: 12px Segoe UI, Arial, sans-serif; fill: #243b53; }
+.small { font: 10px Segoe UI, Arial, sans-serif; fill: #52616f; }
+.axis { stroke: #9fb3c8; stroke-width: 1; }
+.grid { stroke: #e4ebf2; stroke-width: 1; }
+.box { fill: #f8fafc; stroke: #b8c7d6; stroke-width: 1.5; rx: 8; }
+.box2 { fill: #edf7f6; stroke: #4f9d96; stroke-width: 1.5; rx: 8; }
+.box3 { fill: #fff7ed; stroke: #d97706; stroke-width: 1.5; rx: 8; }
+.arrow { stroke: #52616f; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+</style>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#52616f"/>
+</marker>
+</defs>
+<text x="36.0" y="38.0" class="title" text-anchor="start">Request-Class Routing Prototype</text>
+<text x="36.0" y="62.0" class="subtitle" text-anchor="start">The mixed workload was split into a text pool and a heavy image/long-context pool under the same 4-GPU budget.</text>
+<rect x="48" y="132" width="170" height="92" class="box"/>
+<text x="133.0" y="166.0" class="label" text-anchor="middle">Load Tester</text>
+<text x="133.0" y="190.0" class="small" text-anchor="middle">official mixed</text>
+<path d="M218 178 C266 178, 286 178, 326 178" class="arrow"/>
+<rect x="326" y="124" width="176" height="108" class="box"/>
+<text x="414.0" y="158.0" class="label" text-anchor="middle">Routing Client</text>
+<text x="414.0" y="183.0" class="small" text-anchor="middle">text vs heavy</text>
+<text x="414.0" y="205.0" class="small" text-anchor="middle">same scoring path</text>
+<path d="M502 152 C560 110, 600 104, 650 104" class="arrow"/>
+<path d="M502 204 C560 280, 600 302, 650 302" class="arrow"/>
+<rect x="650" y="76" width="384" height="142" class="box2"/>
+<text x="842.0" y="110.0" class="label" text-anchor="middle">Text Endpoint</text>
+<text x="842.0" y="135.0" class="small" text-anchor="middle">2 H100 replicas</text>
+<text x="842.0" y="158.0" class="small" text-anchor="middle">short text prompts</text>
+<text x="842.0" y="181.0" class="small" text-anchor="middle">max-batch-tokens 4096</text>
+<rect x="694" y="226" width="296" height="28" fill="#eefaf7" stroke="#91cbbf" rx="6"/>
+<text x="842.0" y="245.0" class="small" text-anchor="middle">994 text requests, 1 error</text>
+<rect x="650" y="286" width="384" height="162" class="box3"/>
+<text x="842.0" y="320.0" class="label" text-anchor="middle">Heavy Endpoint</text>
+<text x="842.0" y="345.0" class="small" text-anchor="middle">2 H100 replicas</text>
+<text x="842.0" y="368.0" class="small" text-anchor="middle">long + image prompts</text>
+<text x="842.0" y="391.0" class="small" text-anchor="middle">max-batch-tokens 2048</text>
+<rect x="694" y="458" width="296" height="28" fill="#fff1e6" stroke="#f4a261" rx="6"/>
+<text x="842.0" y="477.0" class="small" text-anchor="middle">311 long + 437 image requests</text>
+<rect x="186" y="502" width="748" height="58" fill="#fef2f2" stroke="#dc2626" rx="8"/>
+<text x="560.0" y="526.0" class="label" text-anchor="middle">Observed bottleneck</text>
+<text x="560.0" y="548.0" class="small" text-anchor="middle">The heavy pool had only 2 replicas, so aggregate TTFT p95 rose to 5999.6 ms and score fell to 235,765.</text>
+</svg>
