@@ -118,7 +118,7 @@ def parse_table(lines: list[str], start: int, out: list[str]) -> int:
 
 
 def render(markdown: str) -> str:
-    lines = markdown.splitlines()
+    lines = markdown.lstrip("\ufeff").splitlines()
     out: list[str] = []
     paragraph: list[str] = []
     bullets: list[str] = []
@@ -260,7 +260,8 @@ def render(markdown: str) -> str:
 
 
 def main() -> None:
-    TARGET.write_text(render(SOURCE.read_text(encoding="utf-8")), encoding="utf-8")
+    markdown = SOURCE.read_text(encoding="utf-8-sig")
+    TARGET.write_text(render(markdown), encoding="utf-8")
     print(TARGET)
 
 

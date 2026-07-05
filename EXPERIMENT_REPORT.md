@@ -1,4 +1,4 @@
-﻿# InferTutor Arena Experiment Report
+# InferTutor Arena Experiment Report
 
 Author: Harshavardhana Srinivasan
 
