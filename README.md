@@ -52,10 +52,13 @@ The full report is the main artifact:
 | Artifact | Description |
 |---|---|
 | `EXPERIMENT_REPORT.md` | Source report with experiment log and analysis |
-| `EXPERIMENT_REPORT.pdf` | PDF version of the report |
-| `report_assets/` | SVG plots and architecture diagrams used in the report |
+| `EXPERIMENT_REPORT.pdf` | PDF version of the main experiment report |
+| `DISAGGREGATED_SERVING_DETAILS.pdf` | Companion PDF explaining the disaggregated prefill/decode prototype |
+| `ARCHITECTURE_NOVEL_METHODS.pdf` | Companion PDF explaining architecture changes and novel methods |
+| `report_assets/` | SVG plots and architecture diagrams used in the reports |
 | `generate_report_assets.py` | Regenerates report plots and architecture diagrams |
-| `render_report.py` | Converts the Markdown report to HTML for PDF export |
+| `render_report.py` | Converts the main Markdown report to HTML for PDF export |
+| `render_companion_reports.py` | Converts companion Markdown reports to HTML for PDF export |
 
 The report includes:
 
@@ -94,10 +97,15 @@ This score rewards useful streamed output, sustained concurrency, and low p95 la
 .
 ├── EXPERIMENT_REPORT.md
 ├── EXPERIMENT_REPORT.pdf
+├── DISAGGREGATED_SERVING_DETAILS.md
+├── DISAGGREGATED_SERVING_DETAILS.pdf
+├── ARCHITECTURE_NOVEL_METHODS.md
+├── ARCHITECTURE_NOVEL_METHODS.pdf
 ├── PROJECT_TIMELINE.md
 ├── report_assets/
 ├── generate_report_assets.py
 ├── render_report.py
+├── render_companion_reports.py
 ├── starter_code/
 │   ├── load_test_infertutor.py
 │   ├── load_test_routed_infertutor.py

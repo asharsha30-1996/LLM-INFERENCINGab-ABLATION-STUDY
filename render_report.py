@@ -73,8 +73,7 @@ def inline(text: str) -> str:
 
     def render_code(match: re.Match[str]) -> str:
         value = match.group(1)
-        tag = "strong" if is_narrative_label(value) else "code"
-        return f"<{tag}>{value}</{tag}>"
+        return f"<strong>{value}</strong>"
 
     escaped = re.sub(r"`([^`]+)`", render_code, escaped)
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
@@ -117,7 +116,7 @@ def parse_table(lines: list[str], start: int, out: list[str]) -> int:
     return i
 
 
-def render(markdown: str) -> str:
+def render(markdown: str, title: str = "InferTutor Arena Experiment Report") -> str:
     lines = markdown.lstrip("\ufeff").splitlines()
     out: list[str] = []
     paragraph: list[str] = []
@@ -213,7 +212,7 @@ def render(markdown: str) -> str:
 <html>
 <head>
   <meta charset="utf-8">
-  <title>InferTutor Arena Experiment Report</title>
+  <title>{html.escape(title)}</title>
   <style>
     @page {{ margin: 0.65in; }}
     body {{
